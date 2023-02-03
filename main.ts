@@ -17,7 +17,7 @@ for (let i = 0; i < maxNum; i++) {
     shown.push(false)
 }
 
-// Perform a Fisher-Yates shuffle on seq
+// Perform a Fisher-Yates shuffle on seq so we have a random permutation
 for (let i = 0; i < (seq.length - 1); i++) {
     let rnd = Math.randomRange(i, seq.length - 1)
     let tmp = seq[rnd]
