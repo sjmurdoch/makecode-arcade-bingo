@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.18/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.1.3","target":"arcade","targetVersion":"1.12.18","repo":"sjmurdoch/makecode-arcade-bingo"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.18/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.1.4","target":"arcade","targetVersion":"1.12.18","repo":"sjmurdoch/makecode-arcade-bingo"}
 // total=1334668 new=6.39% cached=88.17% other=5.44%
 (function (ectx) {
 'use strict';
@@ -430,7 +430,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P57034(s) {
+function _main___P57827(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -440,10 +440,10 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.i___44878 = undefined;
-    s.i___44894 = undefined;
-    s.rnd___44901 = undefined;
-    s.tmp___44908 = undefined;
+    s.i___57553 = undefined;
+    s.i___57569 = undefined;
+    s.rnd___57576 = undefined;
+    s.tmp___57583 = undefined;
     globals._intervals___42336 = (undefined);
     globals._pollEventQueue___42345 = (undefined);
     globals.minPriority___38340 = (1);
@@ -845,28 +845,28 @@ switch (step) {
   case 42:
     r0 = s.retval;
     r0 = pxsim_Array__mk();
-    globals.seq___42273 = (r0);
+    globals.seq___57549 = (r0);
     r0 = pxsim_Array__mk();
-    globals.shown___42274 = (r0);
-    s.i___44878 = (0);
+    globals.shown___57551 = (r0);
+    s.i___57553 = (0);
   case 1:
-    r0 = (s.i___44878 < 90);
+    r0 = (s.i___57553 < 90);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
-    s.tmp_1 = r0 = globals.seq___42273;
-    r0 = (s.i___44878 + 1);
+    s.tmp_1 = r0 = globals.seq___57549;
+    r0 = (s.i___57553 + 1);
     s.tmp_2 = r0;
     r0 = pxsim_Array__push(s.tmp_1, s.tmp_2);
-    r0 = pxsim_Array__push(globals.shown___42274, false);
-    r0 = (s.i___44878 + 1);
-    s.i___44878 = (r0);
+    r0 = pxsim_Array__push(globals.shown___57551, false);
+    r0 = (s.i___57553 + 1);
+    s.i___57553 = (r0);
     { step = 1; continue; }
   case 2:
-    s.i___44894 = (0);
+    s.i___57569 = (0);
   case 3:
-    s.tmp_1 = r0 = s.i___44894;
-    r0 = pxsim_Array__length(globals.seq___42273);
+    s.tmp_1 = r0 = s.i___57569;
+    r0 = pxsim_Array__length(globals.seq___57549);
     s.tmp_3 = r0;
     r0 = (s.tmp_3 - 1);
     s.tmp_2 = r0;
@@ -874,23 +874,23 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    s.tmp_4 = r0 = s.i___44894;
-    r0 = pxsim_Array__length(globals.seq___42273);
+    s.tmp_4 = r0 = s.i___57569;
+    r0 = pxsim_Array__length(globals.seq___57549);
     s.tmp_6 = r0;
     r0 = (s.tmp_6 - 1);
     s.tmp_5 = r0;
     r0 = pxsim.Math_.randomRange(s.tmp_4, s.tmp_5);
-    s.rnd___44901 = (r0);
-    r0 = pxsim_Array__getAt(globals.seq___42273, s.rnd___44901);
-    s.tmp___44908 = (r0);
-    s.tmp_0 = r0 = globals.seq___42273;
-    s.tmp_1 = r0 = s.rnd___44901;
-    r0 = pxsim_Array__getAt(globals.seq___42273, s.i___44894);
+    s.rnd___57576 = (r0);
+    r0 = pxsim_Array__getAt(globals.seq___57549, s.rnd___57576);
+    s.tmp___57583 = (r0);
+    s.tmp_0 = r0 = globals.seq___57549;
+    s.tmp_1 = r0 = s.rnd___57576;
+    r0 = pxsim_Array__getAt(globals.seq___57549, s.i___57569);
     s.tmp_2 = r0;
     r0 = pxsim_Array_.setAt(s.tmp_0, s.tmp_1, s.tmp_2);
-    r0 = pxsim_Array_.setAt(globals.seq___42273, s.i___44894, s.tmp___44908);
-    r0 = (s.i___44894 + 1);
-    s.i___44894 = (r0);
+    r0 = pxsim_Array_.setAt(globals.seq___57549, s.i___57569, s.tmp___57583);
+    r0 = (s.i___57569 + 1);
+    s.i___57569 = (r0);
     { step = 3; continue; }
   case 4:
     s.tmp_0 = image_scaledFont__P39925_mk(s);
@@ -899,53 +899,53 @@ switch (step) {
     s.callLocIdx = 63; s.pc = 43; return s.tmp_0;
   case 43:
     r0 = s.retval;
-    globals.bigFont___42275 = (r0);
+    globals.bigFont___57598 = (r0);
     s.tmp_0 = image_scaledFont__P39925_mk(s);
     s.tmp_0.arg0 = globals.font8___39921;
     s.tmp_0.arg1 = 2;
     s.callLocIdx = 64; s.pc = 44; return s.tmp_0;
   case 44:
     r0 = s.retval;
-    globals.medFont___42276 = (r0);
-    globals.showingAll___42277 = (false);
+    globals.medFont___57602 = (r0);
+    globals.showingAll___57606 = (false);
     r0 = pxsim_ImageMethods.width(globals.screen___39978);
     s.tmp_0 = r0;
     r0 = pxsim_ImageMethods.height(globals.screen___39978);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    globals.allNumbers___42278 = (r0);
+    globals.allNumbers___57608 = (r0);
     r0 = pxsim_Array__mk();
-    globals.last___42280 = (r0);
-    globals.lastN___42281 = (0);
-    globals.current___42282 = (0);
+    globals.last___57665 = (r0);
+    globals.lastN___57668 = (0);
+    globals.current___57670 = (0);
     r0 = pxsim_ImageMethods.width(globals.screen___39978);
     s.tmp_0 = r0;
     r0 = pxsim_ImageMethods.height(globals.screen___39978);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    globals.background___42283 = (r0);
+    globals.background___57672 = (r0);
     s.tmp_0 = controller_Button_onEvent__P40141_mk(s);
     s.tmp_0.arg0 = globals.A___40058;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P44996;
+    s.tmp_0.arg2 = inline__P57679;
     s.callLocIdx = 80; s.pc = 45; return s.tmp_0;
   case 45:
     r0 = s.retval;
     s.tmp_0 = controller_Button_onEvent__P40141_mk(s);
     s.tmp_0.arg0 = globals.B___40059;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P45053;
+    s.tmp_0.arg2 = inline__P57736;
     s.callLocIdx = 82; s.pc = 46; return s.tmp_0;
   case 46:
     r0 = s.retval;
     s.tmp_0 = scene_setBackgroundImage__P40829_mk(s);
-    s.tmp_0.arg0 = globals.background___42283;
+    s.tmp_0.arg0 = globals.background___57672;
     s.callLocIdx = 83; s.pc = 47; return s.tmp_0;
   case 47:
     r0 = s.retval;
-    r0 = pxsim_ImageMethods.fill(globals.background___42283, 4);
+    r0 = pxsim_ImageMethods.fill(globals.background___57672, 4);
     s.tmp_0 = helpers_imagePrintCenter__P39935_mk(s);
-    s.tmp_0.arg0 = globals.background___42283;
+    s.tmp_0.arg0 = globals.background___57672;
     s.tmp_0.arg1 = "BINGO";
     r0 = pxsim_ImageMethods.height(globals.screen___39978);
     s.tmp_2 = r0;
@@ -954,12 +954,12 @@ switch (step) {
     r0 = (s.tmp_1 / 2);
     s.tmp_0.arg2 = r0;
     s.tmp_0.arg3 = 1;
-    s.tmp_0.arg4 = globals.bigFont___42275;
+    s.tmp_0.arg4 = globals.bigFont___57598;
     s.callLocIdx = 85; s.pc = 48; return s.tmp_0;
   case 48:
     r0 = s.retval;
     s.tmp_0 = helpers_imagePrintCenter__P39935_mk(s);
-    s.tmp_0.arg0 = globals.background___42283;
+    s.tmp_0.arg0 = globals.background___57672;
     s.tmp_0.arg1 = "Press A to start";
     r0 = pxsim_ImageMethods.height(globals.screen___39978);
     s.tmp_1 = r0;
@@ -974,13 +974,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P57034.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P57034.continuations = [  ]
+_main___P57827.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P57827.continuations = [  ]
 
-function _main___P57034_mk(s) {
+function _main___P57827_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P57034, depth: s.depth + 1,
+        parent: s, fn: _main___P57827, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -989,10 +989,10 @@ function _main___P57034_mk(s) {
   tmp_4: undefined,
   tmp_5: undefined,
   tmp_6: undefined,
-  i___44878: undefined,
-  i___44894: undefined,
-  rnd___44901: undefined,
-  tmp___44908: undefined,
+  i___57553: undefined,
+  i___57569: undefined,
+  rnd___57576: undefined,
+  tmp___57583: undefined,
 } }
 
 const _hex42397 = pxsim.BufferMethods.createBufferFromHex("1f00210023002500270029002c002e003100340037003a003e004100450049004e00520057005c00620068006e0075007b0083008b0093009c00a500af00b900c400d000dc00e900f70006011501260137014a015d01720188019f01b801d201ee010b022a024b026e029302ba02e40210033f037003a403dc03170455049704dd0427057505c80520067d06e0064907b8072d08a9082d09b9094d0aea0a900b400cfa0cc00d910e6f0f5a1053115b1272139a14d41520178018f519801b231dde1e")
@@ -1464,7 +1464,7 @@ function gameOverConfig_inline__P42832_mk(s) {
 
 
 
-function inline__P44996(s) {
+function inline__P57679(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1474,11 +1474,11 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    r0 = (globals.current___42282 == 90);
+    r0 = (globals.current___57670 == 90);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    r0 = pxsim_numops_toBoolDecr(globals.showingAll___42277);
+    r0 = pxsim_numops_toBoolDecr(globals.showingAll___57606);
     s.tmp_2 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_2);
     s.tmp_1 = r0;
@@ -1494,7 +1494,7 @@ switch (step) {
   case 2:
   case 3:
   case 4:
-    r0 = pxsim_numops_toBoolDecr(globals.showingAll___42277);
+    r0 = pxsim_numops_toBoolDecr(globals.showingAll___57606);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
@@ -1503,7 +1503,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 6; continue; }
   case 5:
-    r0 = (globals.current___42282 < 90);
+    r0 = (globals.current___57670 < 90);
   case 6:
     // jmp value (already in r0)
     s.tmp_2 = r0;
@@ -1515,48 +1515,48 @@ switch (step) {
     s.callLocIdx = 73; s.pc = 16; return s.tmp_3;
   case 16:
     r0 = s.retval;
-    r0 = (globals.lastN___42281 != 0);
+    r0 = (globals.lastN___57668 != 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    r0 = pxsim_Array__push(globals.last___42280, globals.lastN___42281);
-    r0 = pxsim_Array__length(globals.last___42280);
+    r0 = pxsim_Array__push(globals.last___57665, globals.lastN___57668);
+    r0 = pxsim_Array__length(globals.last___57665);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 3);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
-    r0 = pxsim_Array_.removeAt(globals.last___42280, 0);
+    r0 = pxsim_Array_.removeAt(globals.last___57665, 0);
   case 7:
   case 8:
   case 9:
   case 10:
-    s.tmp_0 = r0 = globals.current___42282;
+    s.tmp_0 = r0 = globals.current___57670;
     r0 = (s.tmp_0 + 1);
-    globals.current___42282 = (r0);
-    r0 = pxsim_Array__getAt(globals.seq___42273, s.tmp_0);
-    globals.lastN___42281 = (r0);
-    s.tmp_0 = r0 = globals.shown___42274;
-    r0 = (globals.lastN___42281 - 1);
+    globals.current___57670 = (r0);
+    r0 = pxsim_Array__getAt(globals.seq___57549, s.tmp_0);
+    globals.lastN___57668 = (r0);
+    s.tmp_0 = r0 = globals.shown___57551;
+    r0 = (globals.lastN___57668 - 1);
     s.tmp_1 = r0;
     r0 = pxsim_Array_.setAt(s.tmp_0, s.tmp_1, true);
   case 11:
   case 12:
-    r0 = pxsim_ImageMethods.fill(globals.background___42283, 4);
-    r0 = (globals.lastN___42281 != 0);
+    r0 = pxsim_ImageMethods.fill(globals.background___57672, 4);
+    r0 = (globals.lastN___57668 != 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 13; continue; }
     s.tmp_1 = helpers_imagePrintCenter__P39935_mk(s);
-    s.tmp_1.arg0 = globals.background___42283;
+    s.tmp_1.arg0 = globals.background___57672;
     r0 = pxsim_String_.mkEmpty();
     s.tmp_2 = r0;
-    if ((globals.lastN___42281) && (globals.lastN___42281).vtable) {
+    if ((globals.lastN___57668) && (globals.lastN___57668).vtable) {
     setupResume(s, 18);
-    pxsim_String__stringConv(globals.lastN___42281);
+    pxsim_String__stringConv(globals.lastN___57668);
     checkResumeConsumed();
     return;
-    } else { s.retval = (globals.lastN___42281) + ""; }
+    } else { s.retval = (globals.lastN___57668) + ""; }
   case 18:
     r0 = s.retval;
     s.tmp_3 = r0;
@@ -1564,16 +1564,16 @@ switch (step) {
     s.tmp_1.arg1 = r0;
     s.tmp_1.arg2 = 5;
     s.tmp_1.arg3 = 9;
-    s.tmp_1.arg4 = globals.bigFont___42275;
+    s.tmp_1.arg4 = globals.bigFont___57598;
     s.callLocIdx = 76; s.pc = 17; return s.tmp_1;
   case 17:
     r0 = s.retval;
   case 13:
   case 14:
     s.tmp_0 = helpers_imagePrintCenter__P39935_mk(s);
-    s.tmp_0.arg0 = globals.background___42283;
+    s.tmp_0.arg0 = globals.background___57672;
     s.tmp_1 = helpers_arrayJoin__P38068_mk(s);
-    s.tmp_1.arg0 = globals.last___42280;
+    s.tmp_1.arg0 = globals.last___57665;
     s.tmp_1.arg1 = ", ";
     s.callLocIdx = 77; s.pc = 20; return s.tmp_1;
   case 20:
@@ -1581,26 +1581,26 @@ switch (step) {
     s.tmp_0.arg1 = r0;
     s.tmp_0.arg2 = 60;
     s.tmp_0.arg3 = 1;
-    s.tmp_0.arg4 = globals.medFont___42276;
+    s.tmp_0.arg4 = globals.medFont___57602;
     s.callLocIdx = 78; s.pc = 19; return s.tmp_0;
   case 19:
     r0 = s.retval;
     s.tmp_0 = scene_setBackgroundImage__P40829_mk(s);
-    s.tmp_0.arg0 = globals.background___42283;
+    s.tmp_0.arg0 = globals.background___57672;
     s.callLocIdx = 79; s.pc = 21; return s.tmp_0;
   case 21:
     r0 = s.retval;
-    globals.showingAll___42277 = (false);
+    globals.showingAll___57606 = (false);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-inline__P44996.info = {"start":2586,"length":1318,"line":79,"column":52,"endLine":121,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+inline__P57679.info = {"start":2618,"length":1318,"line":79,"column":52,"endLine":121,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P44996_mk(s) {
+function inline__P57679_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P44996, depth: s.depth + 1,
+        parent: s, fn: inline__P57679, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1612,7 +1612,7 @@ function inline__P44996_mk(s) {
 
 
 
-function inline__P45053(s) {
+function inline__P57736(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1622,12 +1622,12 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    r0 = (globals.lastN___42281 != 0);
+    r0 = (globals.lastN___57668 != 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    globals.showingAll___42277 = (true);
-    s.tmp_0 = showAll__P42279_mk(s);
+    globals.showingAll___57606 = (true);
+    s.tmp_0 = showAll__P57612_mk(s);
     s.callLocIdx = 81; s.pc = 3; return s.tmp_0;
   case 3:
     r0 = s.retval;
@@ -1637,12 +1637,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P45053.info = {"start":4050,"length":92,"line":124,"column":52,"endLine":129,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+inline__P57736.info = {"start":4082,"length":92,"line":124,"column":52,"endLine":129,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P45053_mk(s) {
+function inline__P57736_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P45053, depth: s.depth + 1,
+        parent: s, fn: inline__P57736, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
 } }
@@ -1651,7 +1651,7 @@ function inline__P45053_mk(s) {
 
 
 
-function showAll__P42279(s) {
+function showAll__P57612(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1661,31 +1661,31 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.i___44937 = undefined;
-    s.col___44942 = undefined;
-    s.row___44948 = undefined;
-    s.tn___44953 = undefined;
-    globals.showingAll___42277 = (true);
-    r0 = pxsim_ImageMethods.fill(globals.allNumbers___42278, 6);
-    s.i___44937 = (0);
+    s.i___57617 = undefined;
+    s.col___57622 = undefined;
+    s.row___57628 = undefined;
+    s.tn___57633 = undefined;
+    globals.showingAll___57606 = (true);
+    r0 = pxsim_ImageMethods.fill(globals.allNumbers___57608, 6);
+    s.i___57617 = (0);
   case 1:
-    r0 = (s.i___44937 < 90);
+    r0 = (s.i___57617 < 90);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
-    r0 = (s.i___44937 / 10);
+    r0 = (s.i___57617 / 10);
     s.tmp_2 = r0;
     r0 = (~ s.tmp_2);
     s.tmp_1 = r0;
     r0 = (~ s.tmp_1);
-    s.col___44942 = (r0);
-    r0 = (s.i___44937 % 10);
-    s.row___44948 = (r0);
-    r0 = pxsim_Array__getAt(globals.shown___42274, s.i___44937);
+    s.col___57622 = (r0);
+    r0 = (s.i___57617 % 10);
+    s.row___57628 = (r0);
+    r0 = pxsim_Array__getAt(globals.shown___57551, s.i___57617);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    r0 = (s.i___44937 + 1);
+    r0 = (s.i___57617 + 1);
     s.tmp_1 = r0;
     r0 = pxsim_String_.mkEmpty();
     s.tmp_2 = r0;
@@ -1699,34 +1699,34 @@ switch (step) {
     r0 = s.retval;
     s.tmp_3 = r0;
     r0 = pxsim_String__concat(s.tmp_2, s.tmp_3);
-    s.tn___44953 = (r0);
-    r0 = (s.i___44937 + 1);
+    s.tn___57633 = (r0);
+    r0 = (s.i___57617 + 1);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 < 10);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
-    if ((s.tn___44953) && (s.tn___44953).vtable) {
+    if ((s.tn___57633) && (s.tn___57633).vtable) {
     setupResume(s, 8);
-    pxsim_String__stringConv(s.tn___44953);
+    pxsim_String__stringConv(s.tn___57633);
     checkResumeConsumed();
     return;
-    } else { s.retval = (s.tn___44953) + ""; }
+    } else { s.retval = (s.tn___57633) + ""; }
   case 8:
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = pxsim_String__concat(" ", s.tmp_2);
-    s.tn___44953 = (r0);
+    s.tn___57633 = (r0);
   case 2:
   case 3:
     s.tmp_0 = helpers_imagePrint__P39936_mk(s);
-    s.tmp_0.arg0 = globals.allNumbers___42278;
-    s.tmp_0.arg1 = s.tn___44953;
-    r0 = (s.col___44942 * 16);
+    s.tmp_0.arg0 = globals.allNumbers___57608;
+    s.tmp_0.arg1 = s.tn___57633;
+    r0 = (s.col___57622 * 16);
     s.tmp_1 = r0;
     r0 = (10 + s.tmp_1);
     s.tmp_0.arg2 = r0;
-    r0 = (s.row___44948 * 11);
+    r0 = (s.row___57628 * 11);
     s.tmp_2 = r0;
     r0 = (5 + s.tmp_2);
     s.tmp_0.arg3 = r0;
@@ -1738,12 +1738,12 @@ switch (step) {
     r0 = s.retval;
   case 4:
   case 5:
-    r0 = (s.i___44937 + 1);
-    s.i___44937 = (r0);
+    r0 = (s.i___57617 + 1);
+    s.i___57617 = (r0);
     { step = 1; continue; }
   case 6:
     s.tmp_0 = scene_setBackgroundImage__P40829_mk(s);
-    s.tmp_0.arg0 = globals.allNumbers___42278;
+    s.tmp_0.arg0 = globals.allNumbers___57608;
     s.callLocIdx = 69; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
@@ -1751,21 +1751,21 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-showAll__P42279.info = {"start":1303,"length":889,"line":40,"column":0,"endLine":65,"endColumn":1,"fileName":"main.ts","functionName":"showAll","argumentNames":[]}
+showAll__P57612.info = {"start":1335,"length":889,"line":40,"column":0,"endLine":65,"endColumn":1,"fileName":"main.ts","functionName":"showAll","argumentNames":[]}
 
-function showAll__P42279_mk(s) {
+function showAll__P57612_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: showAll__P42279, depth: s.depth + 1,
+        parent: s, fn: showAll__P57612, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  i___44937: undefined,
-  col___44942: undefined,
-  row___44948: undefined,
-  tn___44953: undefined,
+  i___57617: undefined,
+  col___57622: undefined,
+  row___57628: undefined,
+  tn___57633: undefined,
 } }
 
 
@@ -45198,7 +45198,7 @@ const sprites_BaseSpriteSayRenderer__C40204_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["seq___42273","shown___42274","bigFont___42275","medFont___42276","allNumbers___42278","background___42283","current___42282","showingAll___42277","lastN___42281","last___42280"])
+const breakpoints = setupDebugger(1, ["seq___57549","shown___57551","bigFont___57598","medFont___57602","allNumbers___57608","background___57672","current___57670","showingAll___57606","lastN___57668","last___57665"])
 
-return _main___P57034
+return _main___P57827
 })
