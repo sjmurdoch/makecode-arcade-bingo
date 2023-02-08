@@ -3,7 +3,7 @@
 
 > Open this page at [https://sjmurdoch.github.io/makecode-arcade-bingo/](https://sjmurdoch.github.io/makecode-arcade-bingo/)
 
-## Edit this project ![Build status badge](https://github.com/sjmurdoch/makecode-arcade-bingo/workflows/MakeCode/badge.svg)
+## Edit this project
 
 To edit this repository in MakeCode.
 
