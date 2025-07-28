@@ -25,10 +25,6 @@ for (let i = 0; i < (seq.length - 1); i++) {
     seq[i] = tmp
 }
 
-// Set up fonts
-let bigFont = image.scaledFont(image.font8, 4)
-let medFont = image.scaledFont(image.font8, 2)
-
 // Whether we are in the show-all numbers screen
 // We keep track of this because when someone presses A while in the show-all state
 // we don't want to generate a new number but just switch screens
@@ -36,6 +32,17 @@ let showingAll: boolean = false
 
 // Background image for showing all numbers
 let allNumbers: Image = image.create(scene.screenWidth(), scene.screenHeight())
+
+function printCenter(target: Image, text: string, y: number,
+    font: fancyText.BaseFont, color: number, scale: number) {
+    let textWidth = fancyText.getTextWidth(font, text)
+    let textHeight = font.lineHeight
+    let imgBuf = image.create(textWidth, textHeight)
+    fancyText.draw(text, imgBuf, 0, 0, undefined, color, font)
+    target.blit((scene.screenWidth() - textWidth*scale) / 2, y,
+        textWidth*scale, textHeight*scale,
+        imgBuf, 0, 0, textWidth, textHeight, true, false)
+}
 
 // Enter the show-all numbers screen
 function showAll() {
@@ -109,10 +116,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     background.fill(4)
     // Display current number
     if (lastN != 0)
-        background.printCenter(convertToText(lastN), 5, 9, bigFont)
+        printCenter(background, convertToText(lastN), 5, fancyText.outline_two_tone_12, 9, 3)
 
     // Display last numbers
-    background.printCenter(last.join(", "), 60, 1, medFont)
+    printCenter(background, last.join(", "), 60, fancyText.outline_two_tone_12, 1, 1)
 
     // Show current and last numbers on screen
     scene.setBackgroundImage(background)
@@ -132,5 +139,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 // Create and show start screen
 scene.setBackgroundImage(background)
 background.fill(4)
-background.printCenter("BINGO", (scene.screenHeight() - 8 * 4) / 2, 1, bigFont)
+printCenter(background, "BINGO",
+    (scene.screenHeight() - 21 * 2) / 2, fancyText.rounded_large, 1, 2)
 background.printCenter("Press A to start", (scene.screenHeight() - 16), 1, image.font8)

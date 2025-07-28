@@ -3,7 +3,8 @@
     "version": "0.1.4",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "arcade-fancy-text": "github:riknoll/arcade-fancy-text#v0.2.0"
     },
     "files": [
         "main.ts",
