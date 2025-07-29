@@ -33,6 +33,7 @@ let showingAll: boolean = false
 // Background image for showing all numbers
 let allNumbers: Image = image.create(scene.screenWidth(), scene.screenHeight())
 
+// Print text in the center (horizontally)
 function printCenter(target: Image, text: string, y: number,
     font: fancyText.BaseFont, color: number, scale: number) {
     let textWidth = fancyText.getTextWidth(font, text)
@@ -126,6 +127,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
     // Update UI state
     showingAll = false
+
+    //control.heapSnapshot()
 })
 
 // When B is pushed, and we've generated at least one number, switch to show-all screen
@@ -134,6 +137,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         showingAll = true
         showAll()
     }
+    //control.heapSnapshot()
 })
 
 // Create and show start screen
