@@ -86,6 +86,9 @@ let background: Image = image.create(scene.screenWidth(), scene.screenHeight())
 
 // When A is pressed, show the next number
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    // Stop background music
+    music.stopAllSounds()
+
     // If there are no more numbers to show and now showing all, play a sound
     if (current == maxNum) {
         if (!showingAll)
@@ -146,3 +149,4 @@ background.fill(4)
 printCenter(background, "BINGO",
     (scene.screenHeight() - 21 * 2) / 2, fancyText.rounded_large, 1, 2)
 background.printCenter("Press A to start", (scene.screenHeight() - 16), 1, image.font8)
+music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
