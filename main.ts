@@ -1,19 +1,21 @@
-// Numbers shown will be in the range 1 to maxNum (inclusive)
-// Note that display routines assume that maxNum <= 90
-const maxNum: number = 90
+// Numbers shown will be in the range minNum to maxNum (inclusive)
+// Note that all number display shows only 1 to 90 inclusive
+const minNum: number = 0
+const maxNum: number = 100
 
 // Sequence of numbers to be shown
 let seq: number[] = []
 
 // Flag indicating whether each number has been shown
-// Note that this array is indexed by the number itself minus 1
+// Note that this array is indexed by the number
 // not its position in the sequence
+// shown[i] represents minNum+i
 let shown: boolean[] = []
 
 // Initialize seq with all numbers in the range in ascending
 // order and shown set to false
-for (let i = 0; i < maxNum; i++) {
-    seq.push(i + 1)
+for (let i = minNum; i <= maxNum; i++) {
+    seq.push(i)
     shown.push(false)
 }
 
@@ -50,18 +52,21 @@ function showAll() {
     showingAll = true // Update UI state
     allNumbers.fill(6) // Clear the screen
 
-    // Loop over all numbers in range 0 to maxNum - 1
-    for (let i = 0; i < maxNum; i++) {
+    // Loop over all numbers in range minNum to maxNum
+    for (let i = minNum; i <= maxNum; i++) {
+        // On the show-all screen we only do 1 to 90 inclusive
+        if (i < 1 || i > 90)
+            continue
+
         // Find the row and column to print this number
-        let col = ~~(i / 10)
-        let row = i % 10
+        let col = ~~((i-1) / 10)
+        let row = (i-1) % 10
 
         // If number has been shown, print it
-        if (shown[i]) {
-            // shown[] is indexed by number minus 1 so we add 1 back
-            let tn = convertToText(i + 1)
+        if (shown[i - minNum]) {
+            let tn = convertToText(i)
             // Numbers are right-aligned so add a space if less than 10
-            if (i + 1 < 10)
+            if (i < 10)
                 tn = " " + tn
 
             // Draw the number at the right position
@@ -77,7 +82,7 @@ function showAll() {
 let last: number[] = []
 
 // Last number shown
-let lastN = 0
+let lastN: number = null
 // Index of the current number in seq[]
 let current = 0
 
@@ -90,7 +95,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.stopAllSounds()
 
     // If there are no more numbers to show and now showing all, play a sound
-    if (current == maxNum) {
+    if (current >= seq.length) {
         if (!showingAll)
             music.magicWand.play()
         //showAll()
@@ -99,11 +104,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
     // If we are not showing all and there are more numbers, show the next number
     // (if we are showing all or are done, just switch screen without generating a new number)
-    if (!showingAll && current < maxNum) {
+    if (!showingAll && current < seq.length) {
         music.baDing.play()
 
         // Keep the last three numbers in last
-        if (lastN != 0) {
+        if (lastN != null) {
             last.push(lastN)
             if (last.length > 3)
                 last.shift()
@@ -112,14 +117,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         // Get the next number in the sequence
         lastN = seq[current++]
         // Set that this number has been shown
-        // note that shown is index by number minus 1
-        shown[lastN - 1] = true
+        shown[lastN - minNum] = true
     }
 
     // Display current and last number(s)
     background.fill(4)
     // Display current number
-    if (lastN != 0)
+    if (lastN != null)
         printCenter(background, convertToText(lastN), 5, fancyText.outline_two_tone_12, 9, 3)
 
     // Display last numbers
@@ -136,7 +140,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 // When B is pushed, and we've generated at least one number, switch to show-all screen
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (lastN != 0) {
+    if (lastN != null) {
         showingAll = true
         showAll()
     }
