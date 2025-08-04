@@ -3,6 +3,8 @@
 const minNum: number = 0
 const maxNum: number = 100
 
+const lastN_to_show = 5
+
 // Sequence of numbers to be shown
 let seq: number[] = []
 
@@ -110,7 +112,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         // Keep the last three numbers in last
         if (lastN != null) {
             last.push(lastN)
-            if (last.length > 3)
+            if (last.length > lastN_to_show)
                 last.shift()
         }
 
