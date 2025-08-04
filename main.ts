@@ -129,7 +129,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         printCenter(background, convertToText(lastN), 5, fancyText.outline_two_tone_12, 9, 3)
 
     // Display last numbers
-    printCenter(background, last.join(", "), 60, fancyText.outline_two_tone_12, 1, 1)
+    printCenter(background, last.join(", "), 75, fancyText.outline_two_tone_12, 1, 1)
 
     // Show current and last numbers on screen
     scene.setBackgroundImage(background)
